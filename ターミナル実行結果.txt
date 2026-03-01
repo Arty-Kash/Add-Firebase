@@ -1,0 +1,120 @@
+Last login: Mon Feb 23 08:40:31 on ttys000
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+
+Atsushi-no-iMac-3:~ atsu$ pwd
+/Users/atsu
+Atsushi-no-iMac-3:~ atsu$ ls
+Applications				OneDrive
+Desktop					Parallels
+Documents				Pictures
+Downloads				Projects
+Library					Public
+Movies					README.md
+Music					ピクチャのエイリアス
+Atsushi-no-iMac-3:~ atsu$ cd Projects
+Atsushi-no-iMac-3:Projects atsu$ cd Firebase
+Atsushi-no-iMac-3:Firebase atsu$ cd Add
+Atsushi-no-iMac-3:Add atsu$ ls
+main.py			requirements.txt	src
+Atsushi-no-iMac-3:Add atsu$ cd  src
+Atsushi-no-iMac-3:src atsu$ ls
+index.html
+Atsushi-no-iMac-3:src atsu$ cd ..
+Atsushi-no-iMac-3:Add atsu$ pwd
+/Users/atsu/Projects/Firebase/Add
+
+
+Atsushi-no-iMac-3:Add atsu$ python -m venv myenv
+/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python: No module named venv
+
+Atsushi-no-iMac-3:Add atsu$ python3 -m venv myenv
+
+
+
+Atsushi-no-iMac-3:Add atsu$ source myenv/bin/activate
+
+
+
+(myenv) Atsushi-no-iMac-3:Add atsu$ pip install -r requirements.txt
+Requirement already satisfied: pip in ./myenv/lib/python3.14/site-packages (from -r requirements.txt (line 2)) (25.3)
+Collecting autopep8 (from -r requirements.txt (line 3))
+  Downloading autopep8-2.3.2-py2.py3-none-any.whl.metadata (16 kB)
+Collecting flask (from -r requirements.txt (line 6))
+  Downloading flask-3.1.3-py3-none-any.whl.metadata (3.2 kB)
+Collecting pycodestyle>=2.12.0 (from autopep8->-r requirements.txt (line 3))
+  Downloading pycodestyle-2.14.0-py2.py3-none-any.whl.metadata (4.5 kB)
+Collecting blinker>=1.9.0 (from flask->-r requirements.txt (line 6))
+  Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting click>=8.1.3 (from flask->-r requirements.txt (line 6))
+  Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting itsdangerous>=2.2.0 (from flask->-r requirements.txt (line 6))
+  Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting jinja2>=3.1.2 (from flask->-r requirements.txt (line 6))
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting markupsafe>=2.1.1 (from flask->-r requirements.txt (line 6))
+  Downloading markupsafe-3.0.3-cp314-cp314-macosx_10_13_x86_64.whl.metadata (2.7 kB)
+Collecting werkzeug>=3.1.0 (from flask->-r requirements.txt (line 6))
+  Downloading werkzeug-3.1.6-py3-none-any.whl.metadata (4.0 kB)
+Downloading autopep8-2.3.2-py2.py3-none-any.whl (45 kB)
+Downloading flask-3.1.3-py3-none-any.whl (103 kB)
+Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Downloading click-8.3.1-py3-none-any.whl (108 kB)
+Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading markupsafe-3.0.3-cp314-cp314-macosx_10_13_x86_64.whl (11 kB)
+Downloading pycodestyle-2.14.0-py2.py3-none-any.whl (31 kB)
+Downloading werkzeug-3.1.6-py3-none-any.whl (225 kB)
+Installing collected packages: pycodestyle, markupsafe, itsdangerous, click, blinker, werkzeug, jinja2, autopep8, flask
+Successfully installed autopep8-2.3.2 blinker-1.9.0 click-8.3.1 flask-3.1.3 itsdangerous-2.2.0 jinja2-3.1.6 markupsafe-3.0.3 pycodestyle-2.14.0 werkzeug-3.1.6
+
+[notice] A new release of pip is available: 25.3 -> 26.0.1
+[notice] To update, run: pip install --upgrade pip
+
+(myenv) Atsushi-no-iMac-3:Add atsu$ pip list
+Package      Version
+------------ -------
+autopep8     2.3.2
+blinker      1.9.0
+click        8.3.1
+Flask        3.1.3
+itsdangerous 2.2.0
+Jinja2       3.1.6
+MarkupSafe   3.0.3
+pip          25.3
+pycodestyle  2.14.0
+Werkzeug     3.1.6
+
+
+
+(myenv) Atsushi-no-iMac-3:Add atsu$ python main.py
+ * Serving Flask app 'main'
+ * Debug mode: off
+Permission denied
+(myenv) Atsushi-no-iMac-3:Add atsu$ python main.py
+ * Serving Flask app 'main'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 125-439-028
+
+
+この状態で，ブラウザを開き，http://127.0.0.1:5000　にアクセスする．
+アクセスすると，下記のようなログが出力される．
+
+127.0.0.1 - - [01/Mar/2026 05:42:54] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2026 05:42:55] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [01/Mar/2026 05:43:09] "POST /add HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2026 05:43:11] "POST /add HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2026 05:43:14] "POST /add HTTP/1.1" 200 -
+
+
+最後は，ctrl-C で終了する．
+^C(myenv) Atsushi-no-iMac-3:Add atsu$ 
+(myenv) Atsushi-no-iMac-3:Add atsu$ 
+(myenv) Atsushi-no-iMac-3:Add atsu$ 
