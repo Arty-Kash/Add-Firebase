@@ -17,7 +17,11 @@ def add():
     return jsonify({"result": result})
 
 def main():
+  # Firebase上では、下記コード（ポート80）で動く
   # app.run(port=int(os.environ.get('PORT', 80)))
+
+  # ローカルPCではポート80は禁止されているので、Firebaseから出して
+  # ローカルPC上で実行するためには、下記コードに変更する必要がある。
     app.run(debug=True, port=5000)
 
 if __name__ == "__main__":
